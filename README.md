@@ -1,4 +1,5 @@
 This groundbreaking project integrates real-time object detection tech for the visually impaired. A strategically placed camera identifies objects, providing instant voice alerts for enhanced safety and independence. Beyond obstacles, it offers comprehensive object identification, promoting non-contact navigation for a dignified experience. Inclusive for all, it fosters a compassionate community, transforming societal norms.
+
 How to run this code?
 Step 1: Create a directory in your local machine and cd into it
 
@@ -24,5 +25,6 @@ pip install blinker
 Make sure to download and install opencv and and opencv-contrib releases for OpenCV 3.3. This ensures that the deep neural network (dnn) module is installed. You must have OpenCV 3.3 (or newer) to run this code.
 
 Step 4: After installing above libraries runn the below command in command prompt 
+
 python main.py 
 then you will be redirected to a frame that will detect all objects and pronounces.
