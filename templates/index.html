@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection Web App</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #video-container {
+            position: relative;
+        }
+        #video {
+            width: 80%;
+            max-width: 800px;
+            display: block;
+            margin: 0 auto;
+        }
+        #detected-objects {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Object Detection Web App</h1>
+    <div id="video-container">
+        <img id="video" src="{{ url_for('video_feed') }}" alt="Video Stream">
+    </div>
+
+    <script>
+        var detectedObjectsElement = document.getElementById('detected-objects');
+
+        // Periodically fetch detected objects from the server
+        setInterval(function() {
+            fetch('/detected_objects')
+                .then(response => response.json())
+                .then(detectedObjects => {
+                    detectedObjectsElement.innerText = 'Detected Objects: ' + detectedObjects.join(', ');
+                })
+                .catch(error => console.error('Error fetching detected objects:', error));
+        }, 2000);  // Adjust the interval as needed
+    </script>
+</body>
+</html>
