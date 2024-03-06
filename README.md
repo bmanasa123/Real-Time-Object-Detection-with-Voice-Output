@@ -24,6 +24,5 @@ pip install blinker
 Make sure to download and install opencv and and opencv-contrib releases for OpenCV 3.3. This ensures that the deep neural network (dnn) module is installed. You must have OpenCV 3.3 (or newer) to run this code.
 
 Step 4: After installing above libraries runn the below command in command prompt 
-
 python main.py 
 then you will be redirected to a frame that will detect all objects and pronounces.
